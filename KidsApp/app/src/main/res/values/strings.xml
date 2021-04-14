@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KidsApp</string>
+    <string name="launch_math">Launch math</string>
 </resources>
