@@ -1,11 +1,12 @@
 package com.example.kidsapp;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MathQuestion {
     private int id;
     private String question;
-    private ArrayList<Integer> answers;
+    private List<Integer> answers;
     private int correctAnswerIndex;
 
     public MathQuestion() {
@@ -15,7 +16,7 @@ public class MathQuestion {
         correctAnswerIndex = -1;
     }
 
-    public MathQuestion(int i, String q, ArrayList<Integer> a, int c) {
+    public MathQuestion(int i, String q, List<Integer> a, int c) {
         id = i;
         question = q;
         answers = a;
@@ -38,7 +39,7 @@ public class MathQuestion {
         question = q;
     }
 
-    public ArrayList<Integer> getAnswers() {
+    public List<Integer> getAnswers() {
         return answers;
     }
 
