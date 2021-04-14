@@ -3,6 +3,7 @@ package com.example.kidsapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
@@ -27,17 +28,23 @@ public class MathQuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_math_question);
 
         // get all questions from math database
-        mMathDb = MathDatabase = MathDatabase.getInstance();
+        mMathDb = new MathDatabase(this);
         // needs to be updated to dynamically create all MathQuestions
-        mQuestions = mMathDb.getQuestions();
+        List<MathQuestion> questions = mMathDb.getQuestions();
+        for (int i = 0; i < questions.size(); i++) {
+            mQuestions.put(i, questions.get(i));
+        }
 
         mQuestionText = findViewById(R.id.question_text);
         mAnswerButtons = findViewById(R.id.answers_layout);
-        answerButtons = new ArrayList<Button>();
+        // answerButtons = new ArrayList<Button>();
 
+        setQuestion(0);
+        setButtons(0);
     }
 
     private void setQuestion(int questionId) {
+        Log.d("MATH", mQuestions.get(questionId).getQuestion());
         mQuestionText.setText(mQuestions.get(questionId).getQuestion());
     }
 
