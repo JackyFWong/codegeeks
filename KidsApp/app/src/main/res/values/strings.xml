@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">KidsApp</string>
     <string name="launch_math">Launch math</string>
+    <string name="launch_english_reading">Launch English Reading</string>
+    <string name="launch_english_sound">Launch English Sound</string>
+    <string name="launch_science">Launch Science</string>
+    <string name="launch_story">Launch Story</string>
+    <string name="launch_video">Launch Video</string>
+    <string name="app_name_pending">App Name Pending</string>
 </resources>
