@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".StoryActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill"
+        android:orientation="vertical">
+
+
+        <fragment
+            android:id="@+id/str_frg2"
+            android:name="com.example.kidsapp.StoryFragment2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="fill"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/stry_frg1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/fragment_story2" />
+
+        <fragment
+            android:id="@+id/stry_frg1"
+            android:name="com.example.kidsapp.StoryFragment1"
+            android:layout_width="659dp"
+            android:layout_height="399dp"
+            android:layout_gravity="fill"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout="@layout/fragment_story1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
