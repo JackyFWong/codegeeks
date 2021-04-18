@@ -1,19 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<GridLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_gravity="center"
+    tools:context=".MainActivity"
+    android:columnCount="3">
 
-    <Button
-        android:id="@+id/button_launch_math"
+    <TextView
+        android:layout_columnSpan="3"
+        android:id="@+id/app_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onMathClick"
-        android:text="@string/launch_math"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_horizontal"
+        android:textSize="30sp"
+        android:text="@string/app_name_pending" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:layout_columnSpan="1"
+        android:id="@+id/button_launch_math"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:onClick="onMathClick"
+        android:text="@string/launch_math" />
+
+    <Button
+        android:layout_columnSpan="1"
+        android:id="@+id/button_launch_english_reading"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:textSize="25sp"
+        android:onClick="onEnglishReadingClick"
+        android:text="@string/launch_english_reading" />
+
+    <Button
+        android:layout_columnSpan="1"
+        android:id="@+id/button_launch_english_sound"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:textSize="25sp"
+        android:onClick="onEnglishSoundClick"
+        android:text="@string/launch_english_sound" />
+    <Button
+        android:layout_columnSpan="1"
+        android:id="@+id/button_launch_science"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:textSize="25sp"
+        android:onClick="onScienceClick"
+        android:text="@string/launch_science" />
+    <Button
+        android:layout_columnSpan="1"
+        android:id="@+id/button_launch_story"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:textSize="25sp"
+        android:onClick="onStoryClick"
+        android:text="@string/launch_story" />
+    <Button
+        android:layout_columnSpan="1"
+        android:id="@+id/button_launch_video"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:textSize="25sp"
+        android:onClick="onVideoClick"
+        android:text="@string/launch_video" />
+    <Button
+        android:layout_columnSpan="1"
+        android:id="@+id/button_launch_profile"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:textSize="25sp"
+        android:onClick="onProfileClick"
+        android:text="@string/launch_profile" />
+
+
+
+
+</GridLayout>
