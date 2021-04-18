@@ -68,6 +68,14 @@
         android:textSize="25sp"
         android:onClick="onVideoClick"
         android:text="@string/launch_video" />
+    <Button
+        android:layout_columnSpan="1"
+        android:id="@+id/button_launch_profile"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:textSize="25sp"
+        android:onClick="onProfileClick"
+        android:text="@string/launch_profile" />
 
 
 

@@ -7,4 +7,5 @@
     <string name="launch_story">Launch Story</string>
     <string name="launch_video">Launch Video</string>
     <string name="app_name_pending">App Name Pending</string>
+    <string name="launch_profile">Launch Profile</string>
 </resources>
