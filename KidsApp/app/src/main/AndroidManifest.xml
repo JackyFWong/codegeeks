@@ -9,27 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KidsApp">
-        <activity android:name=".ProfileActivity"></activity>
-        <activity
-            android:name=".VideoActivity"
+        <activity android:name=".VideoActivity"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".StoryActivity"
+        <activity android:name=".StoryActivity"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".ScienceQuestionActivity"
+        <activity android:name=".ScienceQuestionActivity"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".EnglishReadingQuestionActivity"
+        <activity android:name=".EnglishReadingQuestionActivity"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".EnglishSoundQuestionActivity"
+        <activity android:name=".EnglishSoundQuestionActivity"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".MathQuestionActivity"
+        <activity android:name=".MathQuestionActivity"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".MainActivity"
+        <activity android:name=".MainActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
