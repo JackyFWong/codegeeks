@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "915258806724",
+    "project_id": "kidsapp-dab1f",
+    "storage_bucket": "kidsapp-dab1f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915258806724:android:54dd412ac3b75f0e6b1491",
+        "android_client_info": {
+          "package_name": "com.example.kidsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915258806724-0b9jcj8p216t7gqc3d1jrsgrr85n0d05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg5uE1yFLaRIWOsTRlk8tRZWPwdfD19WE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915258806724-0b9jcj8p216t7gqc3d1jrsgrr85n0d05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
