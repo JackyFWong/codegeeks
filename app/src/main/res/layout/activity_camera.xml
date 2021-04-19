@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CameraActivity">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="111dp"
+        android:layout_height="123dp"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <Button
+        android:id="@+id/camera_button"
+        android:layout_width="74dp"
+        android:layout_height="48dp"
+        android:text="@string/photo"
+        android:textAlignment="textStart"
+        android:textSize="12sp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.681"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_image"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="74dp"
+        android:layout_height="48dp"
+        android:text="@string/save"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintStart_toEndOf="@+id/camera_button"
+        app:layout_constraintTop_toBottomOf="@+id/iv_image"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <GridLayout
+        android:layout_width="211dp"
+        android:layout_height="202dp"
+        android:columnCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/camera_button"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.219"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:text="@string/name" />
+
+        <EditText
+            android:id="@+id/kid_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:text="Age" />
+
+        <SeekBar
+            android:id="@+id/age_bar"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="136dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:max="10"
+            android:progress="6" />
+
+        <Button
+            android:id="@+id/submit_details"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:text="submit"
+            android:onClick="SaveDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,14 +13,15 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class MathQuestionActivity extends AppCompatActivity {
 
     private MathDatabase mMathDb;
-    private Map<Integer, MathQuestion> mQuestions;
+    public Map<Integer, MathQuestion> mQuestions;
     private TextView mQuestionText;
     private LinearLayout mAnswerButtons;
-    private List<Button> answerButtons;
+    public List<Button> answerButtons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,8 @@ public class MathQuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_math_question);
 
         // get all questions from math database
-        mMathDb = new MathDatabase(this);
+        mMathDb=new MathDatabase(this);
+        mMathDb.getData();
         // needs to be updated to dynamically create all MathQuestions
         List<MathQuestion> questions = mMathDb.getQuestions();
         for (int i = 0; i < questions.size(); i++) {
@@ -39,13 +41,13 @@ public class MathQuestionActivity extends AppCompatActivity {
         mAnswerButtons = findViewById(R.id.answers_layout);
         // answerButtons = new ArrayList<Button>();
 
-        setQuestion(0);
+       setQuestion(0);
         setButtons(0);
     }
 
-    private void setQuestion(int questionId) {
-        Log.d("MATH", mQuestions.get(questionId).getQuestion());
-        mQuestionText.setText(mQuestions.get(questionId).getQuestion());
+    private  void setQuestion(int questionId) {
+//        Log.d("MATH", mQuestions.get(questionId).getQuestion());
+        mQuestionText.setText(Objects.requireNonNull(mQuestions.get(questionId)).getQuestion());
     }
 
     private void setButtons(int questionId) {
