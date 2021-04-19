@@ -8,4 +8,6 @@
     <string name="launch_video">Launch Video</string>
     <string name="app_name_pending">App Name Pending</string>
     <string name="launch_profile">Launch Profile</string>
+    <string name="you_are_right">You are right!</string>
+    <string name="next">Next</string>
 </resources>

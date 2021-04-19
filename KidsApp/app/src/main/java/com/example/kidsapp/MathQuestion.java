@@ -1,5 +1,7 @@
 package com.example.kidsapp;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +58,16 @@ public class MathQuestion {
     }
 
     public boolean compareAnswer(int userAnswer) {
-        return userAnswer == answers.get(correctAnswerIndex);
+        return userAnswer == correctAnswerIndex;
+    }
+
+    @Override
+    public String toString() {
+        return "MathQuestion{" +
+                "id=" + id +
+                ", question='" + question + '\'' +
+                ", answers=" + answers +
+                ", correctAnswerIndex=" + correctAnswerIndex +
+                '}';
     }
 }

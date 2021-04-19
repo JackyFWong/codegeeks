@@ -1,46 +1,50 @@
 package com.example.kidsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class MathQuestionActivity extends AppCompatActivity {
 
-    private MathDatabase mMathDb;
-    private Map<Integer, MathQuestion> mQuestions;
+    private MathDatabaseNew mMathDb;
+    private List<MathQuestion> mQuestions;
     private TextView mQuestionText;
     private LinearLayout mAnswerButtons;
     private List<Button> answerButtons;
+    private int questionIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_question);
 
-        // get all questions from math database
-        mMathDb = new MathDatabase(this);
-        // needs to be updated to dynamically create all MathQuestions
-        List<MathQuestion> questions = mMathDb.getQuestions();
-        for (int i = 0; i < questions.size(); i++) {
-            mQuestions.put(i, questions.get(i));
-        }
+        mMathDb = MathDatabaseNew.getInstance();
+
+        mQuestions = mMathDb.getQuestions();
 
         mQuestionText = findViewById(R.id.question_text);
         mAnswerButtons = findViewById(R.id.answers_layout);
-        // answerButtons = new ArrayList<Button>();
 
-        setQuestion(0);
-        setButtons(0);
+        questionIndex = 0;
+
+        setQuestion(questionIndex);
+        setButtons(questionIndex);
     }
 
     private void setQuestion(int questionId) {
@@ -49,11 +53,14 @@ public class MathQuestionActivity extends AppCompatActivity {
     }
 
     private void setButtons(int questionId) {
-        for (int i = 0; i < mQuestions.size(); i++) {
+        mAnswerButtons.removeAllViews();
+        for (int i = 0; i < mQuestions.get(questionId).getAnswers().size(); i++) {
             Button button = new Button(this);
-            button.setText(mQuestions.get(questionId).getAnswers().get(i));
+            button.setText(String.valueOf(mQuestions.get(questionId).getAnswers().get(i)));
             button.setId(i);
+            button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
             button.setOnClickListener(new View.OnClickListener() {
+                @Override
                 public void onClick(View v) {
                     if (mQuestions.get(questionId).compareAnswer(v.getId())) {
                         correctAnswerSelected();
@@ -64,17 +71,34 @@ public class MathQuestionActivity extends AppCompatActivity {
                 }
             });
             button.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT, 0, 1
+                    ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT
             ));
             mAnswerButtons.addView(button);
         }
     }
 
     private void correctAnswerSelected() {
-        // pop up congratulating user
+        FragmentManager manager = getSupportFragmentManager();
+        CorrectFragment dialog = new CorrectFragment();
+        dialog.show(manager, "correctDialog");
+        onNextQuestion();
     }
 
     private void wrongAnswerSelected() {
-        // pop up apologizing to user
+        FragmentManager manager = getSupportFragmentManager();
+        IncorrectFragment dialog = new IncorrectFragment();
+        dialog.show(manager, "incorrectDialog");
+    }
+
+    public void onNextQuestion() {
+        if (questionIndex >= mQuestions.size() - 1) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+        else {
+            questionIndex++;
+            setQuestion(questionIndex);
+            setButtons(questionIndex);
+        }
     }
 }
