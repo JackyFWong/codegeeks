@@ -38,8 +38,8 @@ public class MathQuestionActivity extends AppCompatActivity {
 
         mQuestions = mMathDb.getQuestions();
 
-        mQuestionText = findViewById(R.id.question_text);
-        mAnswerButtons = findViewById(R.id.answers_layout);
+        mQuestionText = findViewById(R.id.math_question_text);
+        mAnswerButtons = findViewById(R.id.math_answers_layout);
 
         questionIndex = 0;
 

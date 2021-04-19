@@ -7,7 +7,7 @@
     tools:context=".MathQuestionActivity">
 
     <TextView
-        android:id="@+id/question_text"
+        android:id="@+id/math_question_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="50sp"
@@ -16,12 +16,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/answers_layout"
+        android:id="@+id/math_answers_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question_text" />
+        app:layout_constraintTop_toBottomOf="@+id/math_question_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
