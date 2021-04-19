@@ -1,15 +1,14 @@
 package com.example.kidsapp;
-
-        import android.app.Activity;
-        import android.content.ContentResolver;
-        import android.content.ContentValues;
-        import android.content.Context;
-        import android.content.Intent;
-        import android.content.SharedPreferences;
-        import android.content.pm.PackageManager;
-        import android.graphics.Bitmap;
-        import android.graphics.BitmapFactory;
-        import android.net.Uri;
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
         import android.os.Bundle;
         import android.os.Environment;
         import android.provider.MediaStore;
