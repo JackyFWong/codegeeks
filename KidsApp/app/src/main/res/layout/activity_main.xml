@@ -8,8 +8,40 @@
     tools:context=".MainActivity"
     android:columnCount="3">
 
+
+    <Button
+        android:id="@+id/btn_imageSetter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_gravity="left"
+        android:text="@string/profilepic" />
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="58dp"
+        android:layout_height="42dp"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_gravity="right"
+        android:contentDescription="@string/profilepic"
+        android:src="@drawable/profilepic" />
+
     <TextView
-        android:layout_columnSpan="3"
+        android:id="@+id/name"
+        android:textSize="24sp"
+        android:layout_row="0"
+        android:layout_column="2"
+        android:gravity="left"
+        android:textColor="#ffd700"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        />
+
+    <TextView
+        android:layout_column="1"
+        android:layout_row="0"
         android:id="@+id/app_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,38 +50,54 @@
         android:text="@string/app_name_pending" />
 
     <Button
-        android:layout_columnSpan="1"
+        android:id="@+id/insta_btn"
+        android:layout_width="49dp"
+        android:layout_height="62dp"
+        android:layout_row="0"
+        android:layout_column="2"
+        android:layout_gravity="center"
+        android:background="@drawable/insta"
+        android:gravity="right" />
+    <Button
         android:id="@+id/button_launch_math"
         android:layout_width="200dp"
         android:layout_height="120dp"
-        android:textSize="25sp"
-        android:layout_gravity="center"
+        android:layout_column="0"
+        android:layout_row="1"
         android:onClick="onMathClick"
-        android:text="@string/launch_math" />
+        android:layout_gravity="center"
+        android:text="@string/launch_math"
+        android:textSize="25sp" />
 
     <Button
-        android:layout_columnSpan="1"
+        android:layout_column="2"
+        android:layout_row="2"
         android:id="@+id/button_launch_english_reading"
         android:layout_width="200dp"
         android:layout_height="120dp"
         android:textSize="25sp"
+        android:layout_gravity="center"
         android:onClick="onEnglishReadingClick"
         android:text="@string/launch_english_reading" />
 
     <Button
-        android:layout_columnSpan="1"
+        android:layout_column="2"
+        android:layout_row="1"
         android:id="@+id/button_launch_english_sound"
         android:layout_width="200dp"
         android:layout_height="120dp"
         android:textSize="25sp"
+        android:layout_gravity="center"
         android:onClick="onEnglishSoundClick"
         android:text="@string/launch_english_sound" />
     <Button
-        android:layout_columnSpan="1"
+        android:layout_column="1"
+        android:layout_row="1"
         android:id="@+id/button_launch_science"
         android:layout_width="200dp"
         android:layout_height="120dp"
         android:textSize="25sp"
+        android:layout_gravity="center"
         android:onClick="onScienceClick"
         android:text="@string/launch_science" />
     <Button
@@ -58,6 +106,7 @@
         android:layout_width="200dp"
         android:layout_height="120dp"
         android:textSize="25sp"
+        android:layout_gravity="center"
         android:onClick="onStoryClick"
         android:text="@string/launch_story" />
     <Button
@@ -66,18 +115,9 @@
         android:layout_width="200dp"
         android:layout_height="120dp"
         android:textSize="25sp"
+        android:layout_gravity="center"
         android:onClick="onVideoClick"
         android:text="@string/launch_video" />
-    <!--
-    <Button
-        android:layout_columnSpan="1"
-        android:id="@+id/button_launch_profile"
-        android:layout_width="200dp"
-        android:layout_height="120dp"
-        android:textSize="25sp"
-        android:onClick="onProfileClick"
-        android:text="@string/launch_profile" />
-    -->
 
 
 
